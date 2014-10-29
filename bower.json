@@ -1,0 +1,25 @@
+{
+  "name": "grunt_example",
+  "version": "0.0.0",
+  "homepage": "https://github.com/kumarunster/grunt_example",
+  "authors": [
+    "Nikolai Raitsev <nikolai.raitsev@gmail.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "Eclipse",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.3.0",
+    "angular": "~1.3.0",
+    "bootstrap": "~3.3.0"
+  }
+}

@@ -9,8 +9,8 @@ module.exports = function(grunt) {
  
     includes: {
       files: {
-        src: ['prepare_include/__index.html'], // Source files
-        dest: '.', // Destination directory
+        src: ['prepare_include/index.html'], // Source files
+        dest: '__index.html', // Destination directory
         flatten: true,
         cwd: '.',
         options: {
@@ -74,6 +74,17 @@ module.exports = function(grunt) {
         // Gets the port from the connect configuration
         path: 'http://localhost:<%= express.all.options.port%>/__index.html'
       }
+    },
+      
+    ngAnnotate: {
+        options: {
+            singleQuotes: true,
+        },
+        app: {
+            files: {
+                'app': ['concat/content/xyz/release/released.js']
+            },
+        }
     }
   });
  
@@ -88,6 +99,7 @@ module.exports = function(grunt) {
     'useminPrepare',
     'copy',
     'concat',
+    //'ngAnnotate',
     'uglify',
     'usemin'
   ]);
