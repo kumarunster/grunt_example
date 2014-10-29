@@ -49,7 +49,17 @@ module.exports = function(grunt) {
                               // Make sure you don't use `.` or `..` in the path as Express
                               // is likely to return 403 Forbidden responses if you do
                               // http://stackoverflow.com/questions/14594121/express-res-sendfile-throwing-forbidden-error
-          livereload: true
+          livereload: true,
+          middleware: [
+              function myMiddleware(req, res, next) {
+                if(req.url.indexOf('/api/dateAdd') == 0) {
+                    var result = {date: new Date().getTime()};
+                    res.end(JSON.stringify(result));
+                }
+                else
+                    return next();
+              }
+            ]
         }
       }
     },

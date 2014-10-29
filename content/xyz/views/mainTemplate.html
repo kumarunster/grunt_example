@@ -1,4 +1,24 @@
-<h1>{{main.title}}</h1>
-<p>
-    Model is: {{main.model}}
-</p>
+
+<div class="container">
+    <h1>{{main.title}}</h1>
+    <h2>{{main.timestamp}}</h2>
+    <p>
+        Model is: {{main.model}}
+    </p>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sd-6 col-xs-9">
+            <input class="form-control" name="inputN" value="input on the fly"></input>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sd-6 col-xs-3">
+            <button ng-click="main.callService()" class="btn btn-primary">call service</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sd-6 col-xs-9">
+        </div>
+        <div class="col-lg-6 col-md-6 col-sd-6 col-xs-3">
+            {{main.serviceResult}}
+        </div>
+
+    </div>
+</div>
