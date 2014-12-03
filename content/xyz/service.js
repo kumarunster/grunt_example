@@ -17,7 +17,7 @@ function DateService ($q, $http) {
         .error(function (data) {
             console.log("error " + data);
             defResult.reject('cannot request api');
-        })
+        });
         
         
         return defResult.promise;
@@ -25,7 +25,7 @@ function DateService ($q, $http) {
     
     return {
         doServiceCall: serviceCall
-    }
+    };
 }
     
 //DateService.$inject([]);
